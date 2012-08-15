@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem "thin", ">= 1.4.1", :group => [:development, :test]
 gem "test-unit", :group => [:development, :test]
 gem "shoulda", :group => [:development, :test]
-gem "validates_timeliness", :group => [:development, :test]
+gem "validates_timeliness"
 gem "thin", ">= 1.4.1", :group => :production
 gem "pg", ">= 0.14.0"
 gem "haml", ">= 3.1.7"
