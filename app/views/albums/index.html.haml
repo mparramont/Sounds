@@ -14,6 +14,7 @@
       %td= album.name
       %td= album.release_date
       %td= album.info
+      %td= image_tag album.cover.url(:thumb)
       %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
       %td= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete

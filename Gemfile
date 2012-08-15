@@ -13,6 +13,7 @@ gem "validates_timeliness"
 gem "thin", ">= 1.4.1", :group => :production
 gem "pg", ">= 0.14.0"
 gem "haml", ">= 3.1.7"
+gem 'paperclip'
 gem "haml-rails", ">= 0.3.4", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development

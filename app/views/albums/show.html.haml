@@ -9,6 +9,9 @@
 %p
   %b Info:
   = @album.info
+%p
+  %b Cover:
+  = image_tag @album.cover.url(:medium)
 
 = link_to 'Edit', edit_album_path(@album)
 \|
