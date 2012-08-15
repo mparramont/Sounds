@@ -9,11 +9,9 @@ gem 'jquery-rails'
 gem "thin", ">= 1.4.1", :group => [:development, :test]
 gem "test-unit", :group => [:development, :test]
 gem "shoulda", :group => [:development, :test]
-gem "validates_timeliness"
 gem "thin", ">= 1.4.1", :group => :production
 gem "pg", ">= 0.14.0"
 gem "haml", ">= 3.1.7"
-gem 'paperclip'
 gem "haml-rails", ">= 0.3.4", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development
@@ -22,3 +20,7 @@ gem "capybara", ">= 1.1.2", :group => :test
 gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.0.4.0"
 gem "therubyracer", :group => :assets, :platform => :ruby
+
+gem "validates_timeliness" #validated dates
+gem 'paperclip' #for upload file functionality
+gem 'aws-sdk' #for s3 storage (heroku's file system is read only)
