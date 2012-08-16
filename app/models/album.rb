@@ -20,9 +20,4 @@ class Album < ActiveRecord::Base
 
   validates_attachment_content_type :cover, :content_type => /image/
   validates_attachment_size :cover, :less_than => 2.megabytes
-
-  #workaround to prevent non-image files being processed
-  def asset?
-    !(asset_content_type =~ /^image.*/).nil?
-  end
 end

@@ -48,6 +48,7 @@ class AlbumsController < ApplicationController
         format.json { render json: @album, status: :created, location: @album }
       else
         format.html { render action: "new" }
+        clean @album.errors
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
@@ -64,6 +65,7 @@ class AlbumsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        clean @album.errors
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
@@ -80,4 +82,12 @@ class AlbumsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def clean errors #workaround to ignore "'identify' command" errors
+    errors.each do |key, error|
+      errors.delete(key) if error =~ /\'identify\' command/i
+    end
+  end
+
 end
