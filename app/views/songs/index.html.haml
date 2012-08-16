@@ -1,0 +1,21 @@
+%h1 Listing songs
+
+%table
+  %tr
+    %th Name
+    %th Duration
+    %th
+    %th
+    %th
+
+  - @songs.each do |song|
+    %tr
+      %td= song.name
+      %td= Time.at(song.duration).utc.strftime("%_M:%S")
+      %td= link_to 'Show', song
+      %td= link_to 'Edit', edit_song_path(song)
+      %td= link_to 'Destroy', song, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Song', new_song_path
