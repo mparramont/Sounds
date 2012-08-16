@@ -1,3 +1,4 @@
+Paperclip.options[:command_path] = "/usr/bin"
 Sounds::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
