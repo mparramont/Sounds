@@ -1,5 +1,8 @@
 class Album < ActiveRecord::Base
-  attr_accessible :info, :name, :release_date, :cover
+  belongs_to :artist
+  attr_accessible :info, :name, :release_date, :cover, :artist, :songs_attributes
+  has_many :songs, :dependent => :destroy
+  accepts_nested_attributes_for :songs, :allow_destroy => :true
   validates_presence_of :name
   validates_uniqueness_of :name
   validates_date :release_date

@@ -80,4 +80,15 @@ class ArtistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def find_similar_to
+    @artist = Artist.find(params[:id])
+    similar = Rockstar::Artist.new(@artist.name).similar
+    @first_10_similar = similar.first(10)
+    @more_similar = similar.drop(10)
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end

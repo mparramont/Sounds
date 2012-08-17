@@ -40,7 +40,10 @@ class SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
-    @song = Song.new(params[:song])
+    @song = Song.new
+    @song.name = params[:song][:name]
+    @song.duration = params[:song][:duration]
+    @song.album = Album.find(params[:song][:album])
 
     respond_to do |format|
       if @song.save

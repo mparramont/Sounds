@@ -4,6 +4,7 @@
   %tr
     %th Name
     %th Duration
+    %th Album
     %th
     %th
     %th
@@ -11,7 +12,8 @@
   - @songs.each do |song|
     %tr
       %td= song.name
-      %td= Time.at(song.duration).utc.strftime("%_M:%S")
+      %td= to_min_sec song.duration
+      %td= link_to song.album.name, album_path(song.album)
       %td= link_to 'Show', song
       %td= link_to 'Edit', edit_song_path(song)
       %td= link_to 'Destroy', song, :confirm => 'Are you sure?', :method => :delete

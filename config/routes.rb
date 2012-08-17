@@ -3,7 +3,9 @@ Sounds::Application.routes.draw do
 
   resources :albums
 
-  resources :artists
+  resources :artists do
+    get 'find_similar_to', :on => :member
+  end
 
   root :to => "home#index"
 end

@@ -1,0 +1,1 @@
+Rockstar.lastfm = {:api_key => "1f39d4443deb086401099c11fd08527a", :api_secret => "d57d83dd63cd8f03c802bb4283d58e71"}

@@ -5,7 +5,10 @@
   = @song.name
 %p
   %b Duration:
-  = Time.at(@song.duration).utc.strftime("%_M:%S")
+  = to_min_sec @song.duration
+%p
+  %b Album:
+  = link_to @song.album.name, album_path(@song.album)
 
 = link_to 'Edit', edit_song_path(@song)
 \|

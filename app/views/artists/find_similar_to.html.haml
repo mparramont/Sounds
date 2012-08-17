@@ -1,0 +1,5 @@
+-@first_10_similar.each do |artist|
+  =link_to artist.name.html_safe, artist.url
+#more
+  -@more_similar.each do |artist|
+    =link_to artist.name.html_safe, artist.url

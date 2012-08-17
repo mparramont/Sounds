@@ -1,6 +1,10 @@
 %p#notice= notice
 
 %p
+  %b Artist:
+  =link_to @album.artist.name, @album.artist if @album.artist
+
+%p
   %b Name:
   = @album.name
 %p
@@ -12,6 +16,12 @@
 %p
   %b Cover:
   = image_tag @album.cover.url(:medium)
+%p
+  %b Songs:
+  - @album.songs.each do |song|
+    %p
+      = song.name
+      = to_min_sec song.duration
 
 = link_to 'Edit', edit_album_path(@album)
 \|

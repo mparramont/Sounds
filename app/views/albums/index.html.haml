@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th Artist
     %th Name
     %th Release date
     %th Info
@@ -11,6 +12,7 @@
 
   - @albums.each do |album|
     %tr
+      %td= link_to album.artist.name, album.artist if album.artist
       %td= album.name
       %td= album.release_date
       %td= album.info

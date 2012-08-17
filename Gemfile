@@ -25,3 +25,4 @@ gem "validates_timeliness" #validated dates
 gem 'paperclip' #for upload file functionality
 gem 'rmagick' #for image content type validation, ImageMagick interface
 gem 'aws-sdk' #for s3 storage (heroku's file system is read only)
+gem 'rockstar' #for last.fm

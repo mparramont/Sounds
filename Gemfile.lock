@@ -128,6 +128,13 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     rmagick (2.13.1)
+    rockstar (0.6.4)
+      activesupport (>= 1.4.2)
+      activesupport (>= 1.4.2)
+      hpricot (>= 0.4.86)
+      hpricot (>= 0.4.86)
+      i18n
+      rake
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -205,6 +212,7 @@ DEPENDENCIES
   pg (>= 0.14.0)
   rails (= 3.2.8)
   rmagick
+  rockstar
   rspec-rails (>= 2.11.0)
   ruby_parser (>= 2.3.1)
   sass-rails (~> 3.2.3)

@@ -40,10 +40,14 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
+    name = params[:album][:artist]
+    artist = Artist.new(:name => name) unless artist = Artist.find_by_name(name)
+    params[:album][:artist] = artist
     @album = Album.new(params[:album])
 
     respond_to do |format|
       if @album.save
+        artist.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render json: @album, status: :created, location: @album }
       else
@@ -58,9 +62,13 @@ class AlbumsController < ApplicationController
   # PUT /albums/1.json
   def update
     @album = Album.find(params[:id])
-
+    name = params[:album][:artist]    
+    artist = Artist.new(:name => name) unless artist = Artist.find_by_name(name)
+    params[:album][:artist] = artist
+    
     respond_to do |format|
       if @album.update_attributes(params[:album])
+        artist.save
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
         format.json { head :no_content }
       else

@@ -1,3 +1,5 @@
+
+
 %p#notice= notice
 
 %p
@@ -6,6 +8,11 @@
 %p
   %b Bio:
   = @artist.bio
+
+%p
+  %b Similar artists:
+  #similar{'data-load' => find_similar_to_artist_path(@artist, :format => :js)}
+    Loading...
 
 = link_to 'Edit', edit_artist_path(@artist)
 \|
