@@ -2,5 +2,4 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-  console.log $('#similar').attr('data-load')
   $('#similar').load($('#similar').attr('data-load'))

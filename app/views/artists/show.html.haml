@@ -10,8 +10,14 @@
   = @artist.bio
 
 %p
+  %b Albums
+  - @artist.albums.each do |album|
+    %p
+    = link_to album.name, album
+
+%p
   %b Similar artists:
-  #similar{'data-load' => find_similar_to_artist_path(@artist, :format => :js)}
+  #similar{'data-load' => similar_to_artist_path(@artist)}
     Loading...
 
 = link_to 'Edit', edit_artist_path(@artist)

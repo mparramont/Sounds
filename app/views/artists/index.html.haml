@@ -6,13 +6,11 @@
     %th Bio
     %th
     %th
-    %th
 
   - @artists.each do |artist|
     %tr
-      %td= artist.name
+      %td= link_to artist.name, artist
       %td= artist.bio
-      %td= link_to 'Show', artist
       %td= link_to 'Edit', edit_artist_path(artist)
       %td= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete
 

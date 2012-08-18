@@ -81,14 +81,14 @@ class ArtistsController < ApplicationController
     end
   end
 
-  def find_similar_to
+  def similar_to
     @artist = Artist.find(params[:id])
     similar = Rockstar::Artist.new(@artist.name).similar
     @first_10_similar = similar.first(10)
     @more_similar = similar.drop(10)
 
     respond_to do |format|
-      format.js
+      format.html {render :layout => false}
     end
   end
 end

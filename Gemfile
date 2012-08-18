@@ -21,6 +21,7 @@ gem "factory_girl_rails", ">= 4.0.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.0.4.0"
 gem "therubyracer", :group => :assets, :platform => :ruby
 
+gem 'nested_form' #for nested songs inside album
 gem "validates_timeliness" #validated dates
 gem 'paperclip' #for upload file functionality
 gem 'rmagick' #for image content type validation, ImageMagick interface

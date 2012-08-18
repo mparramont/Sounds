@@ -1,5 +1,4 @@
-- @album.songs.build
-= form_for @album, :html => { :multipart => true } do |album_form|
+= nested_form_for @album, :html => { :multipart => true } do |f|
   -if @album.errors.any?
     #error_explanation
       %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
@@ -10,22 +9,24 @@
   -name = ''
   -name = @album.artist.name if @album.artist
   .field
-    = album_form.label :artist
-    = album_form.text_field :artist, :value => name
+    = f.label :artist
+    = f.text_field :artist, :value => name
 
   .field
-    = album_form.label :name
-    = album_form.text_field :name
+    = f.label :name
+    = f.text_field :name
   .field
-    = album_form.label :release_date
-    = album_form.date_select :release_date
+    = f.label :release_date
+    = f.date_select :release_date
   .field
-    = album_form.label :info
-    = album_form.text_area :info
+    = f.label :info
+    = f.text_area :info
   .field
-    = album_form.label :cover
-    = album_form.file_field :cover
-  / %p Songs
-  / = render  :partial => 'songs/form', :locals => {:form => album_form}
+    = f.label :cover
+    = f.file_field :cover
+  .field 
+    = f.label :songs
+    = f.fields_for :songs
+    = f.link_to_add 'Add a song', :songs
   .actions
-    = album_form.submit 'Save'
+    = f.submit 'Save'

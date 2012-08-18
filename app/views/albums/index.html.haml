@@ -5,19 +5,19 @@
     %th Artist
     %th Name
     %th Release date
+    %th Number of songs
     %th Info
-    %th
     %th
     %th
 
   - @albums.each do |album|
     %tr
       %td= link_to album.artist.name, album.artist if album.artist
-      %td= album.name
+      %td= link_to album.name, album
       %td= album.release_date
+      %td= album.songs.count
       %td= album.info
       %td= image_tag album.cover.url(:thumb)
-      %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
       %td= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete
 
