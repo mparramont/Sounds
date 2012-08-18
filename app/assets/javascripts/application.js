@@ -15,3 +15,8 @@
 //= require jquery_nested_form
 //= require bootstrap
 //= require_tree .
+$(function(){
+  var active = window.location.pathname.substring(1) || 'home';
+  $('.nav li').removeClass('active');
+  $('.nav #'+active).addClass('active');
+})

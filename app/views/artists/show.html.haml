@@ -1,16 +1,11 @@
+%h3= @artist.name
 
-
-%p#notice= notice
-
-%p
-  %b Name:
-  = @artist.name
 %p
   %b Bio:
   = @artist.bio
 
 %p
-  %b Albums
+  %b Albums:
   - @artist.albums.each do |album|
     %p
     = link_to album.name, album

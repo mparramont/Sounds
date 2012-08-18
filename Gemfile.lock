@@ -36,6 +36,7 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bootstrap-sass (2.0.4.0)
+    browser (0.1.4)
     builder (3.0.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -174,6 +175,8 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     test-unit (2.5.1)
+    texticle (2.0.3)
+      activerecord (~> 3.0)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
     thin (1.4.1)
@@ -190,6 +193,9 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    utf8_enforcer_workaround (1.0.0)
+      browser (>= 0.1.0)
+      rails (>= 3.2.0)
     uuidtools (2.1.3)
     validates_timeliness (3.0.12)
       timeliness (~> 0.3.6)
@@ -220,7 +226,9 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   shoulda
   test-unit
+  texticle (~> 2.0)
   therubyracer
   thin (>= 1.4.1)
   uglifier (>= 1.0.3)
+  utf8_enforcer_workaround
   validates_timeliness

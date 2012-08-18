@@ -22,8 +22,10 @@ gem "bootstrap-sass", ">= 2.0.4.0"
 gem "therubyracer", :group => :assets, :platform => :ruby
 
 gem 'nested_form' #for nested songs inside album
-gem "validates_timeliness" #validated dates
+gem "validates_timeliness" #validates dates
 gem 'paperclip' #for upload file functionality
 gem 'rmagick' #for image content type validation, ImageMagick interface
 gem 'aws-sdk' #for s3 storage (heroku's file system is read only)
 gem 'rockstar' #for last.fm
+gem 'texticle', '~> 2.0', :require => 'texticle/rails' #for search
+gem 'utf8_enforcer_workaround' #to remove "utf8=✓" from 'get' queries

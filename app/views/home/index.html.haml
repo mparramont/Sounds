@@ -1,4 +1,20 @@
-%h1 Home
-=link_to 'Artists', artists_path
-%br
-=link_to 'Albums', albums_path
+.hero-unit
+  %p
+    %h1 Sounds
+
+  %p 
+    Sounds is a web application to store your music metadata, including artists, albums and songs. 
+
+  %p 
+    Features:
+    %br
+    · Integration with last.fm to check for similar artists
+    %br
+    · A nifty search box to locate all your music
+
+  %p
+    %h3 Try it out!
+  %p
+    %p= link_to 'Create an album', new_album_path, class: 'btn btn-primary btn-large'
+
+Small project for Simfy - hope you like it!
