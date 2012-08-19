@@ -17,13 +17,13 @@
   %p
     %b Use the navigation bar above, or check below whats new!
 .row
-  %h2.span6 
-    =link_to 'Recent artists', artists_path
+  .span6 
+    %h2=link_to 'Recent artists', artists_path
     %ul.thumbnails
       - @artists.each do |artist|
         = render partial: 'artists/artist', locals: {artist: artist, edit: false}
-  %h2.span6 
-    =link_to 'Recent albums', albums_path
+  .span6 
+    %h2=link_to 'Recent albums', albums_path
     %ul.thumbnails
       - @albums.each do |album|
         = render partial: 'albums/album', locals: {album: album, edit: false}

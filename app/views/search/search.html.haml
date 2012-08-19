@@ -1,7 +1,7 @@
-%h1 Search results:
+%h1 Search results for "#{@q}"
 
 %ul.thumbnails
-  %h3.span12 Artists
+  %h3.span12 Artists:
   -if @artists.count >0
     -@artists.each do |artist|
       = render partial: 'artists/artist', locals: {artist: artist, edit: false}
@@ -9,14 +9,14 @@
     %p.span12 No matching artists found.
 
 %ul.thumbnails  
-  %h3.span12 Albums
+  %h3.span12 Albums:
   -if @albums.count >0
     -@albums.each do |album|
       = render partial: 'albums/album', locals: {album: album, edit: false}
   -else
     %p.span12 No matching albums found.
 
-%h3 Songs
+%h3 Songs:
 -if @songs.count > 0
   %table.table
     -@songs.each do |song|
