@@ -14,7 +14,7 @@ class ArtistsController < ApplicationController
   # GET /artists/1.json
   def show
     @artist = Artist.find(params[:id])
-
+    @artist.albums.sort!{|a,b | a.release_date.year <=> b.release_date.year}
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @artist }

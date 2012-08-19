@@ -9,7 +9,9 @@
 
   = f.input :release_date, 
             use_short_month: true, 
-            input_html: {class: 'date-picker'}
+            input_html: {class: 'date-picker'},
+            start_year: 1970,
+            end_year: 2038
 
   = f.input :genre
 

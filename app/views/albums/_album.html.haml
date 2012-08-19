@@ -9,6 +9,8 @@
         \-
         = link_to album.artist.name, album.artist
     %h6
+      = album.release_date.year
+      \|
       = pluralize album.songs.count , 'song'
 
     -if edit

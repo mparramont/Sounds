@@ -20,10 +20,11 @@
         %tr
           %td= song.name
           %td= to_min_sec song.duration
-    %h6
-      = pluralize @album.songs.count , 'song'
-      \| 
-      = to_min_sec @album.duration
+    %p
+      %h6
+        = pluralize @album.songs.count , 'song'
+        \| 
+        = to_min_sec @album.duration
 .info
   %p= @album.info
 
