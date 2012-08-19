@@ -5,7 +5,7 @@
     = link_to @album.artist.name, @album.artist if @album.artist
 %p
   = @album.release_date 
-  - if @album.genre.length > 0
+  - if @album.genre and @album.genre.length > 0
     \|
     = @album.genre
 .row
