@@ -88,7 +88,7 @@ class ArtistsController < ApplicationController
     @more_similar = similar.drop(10)
 
     respond_to do |format|
-      format.html {render :layout => false}
+      format.js
     end
   end
 end

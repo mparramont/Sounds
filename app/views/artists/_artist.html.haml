@@ -1,0 +1,16 @@
+%li.span3
+  .thumbnail
+    %p.image
+      = link_to artist do
+        = image_tag artist.picture.url(:medium)
+    .name
+      %b= link_to artist.name, artist
+    %h6
+      = pluralize artist.songs, 'song'
+      , 
+      = pluralize artist.albums.count, 'album'
+
+    -if edit
+      = link_to 'Edit', edit_artist_path(artist)
+      \|
+      = link_to 'Delete', artist, :confirm => 'Are you sure?', :method => :delete

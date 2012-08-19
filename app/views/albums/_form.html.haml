@@ -1,32 +1,43 @@
-= nested_form_for @album, :html => { :multipart => true } do |f|
+= simple_nested_form_for @album, html: { multipart: true } do |f|
   -if @album.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@album.errors.count, "error")} prohibited this album from being saved:"
-      %ul
-        - @album.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error Some errors were found, please take a look:
+      
+  = f.input :artist, 
+            input_html: {value: @name } 
 
-  -name = ''
-  -name = @album.artist.name if @album.artist
-  .field
-    = f.label :artist
-    = f.text_field :artist, :value => name
+  = f.input :name
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :release_date
-    = f.date_select :release_date
-  .field
-    = f.label :info
-    = f.text_area :info
-  .field
-    = f.label :cover
-    = f.file_field :cover
-  .field 
-    = f.label :songs
-    = f.fields_for :songs
-    = f.link_to_add 'Add a song', :songs
+  = f.input :release_date, 
+            use_short_month: true, 
+            input_html: {class: 'date-picker'}
+
+  = f.input :genre
+
+  = f.input :info
+
+  = f.input :cover,
+            wrapper_html: { class: 'inline' }
+  / = link_to 'Find cover on Last.fm', cover_albums_path(@album), remote: true, id: 'cover_link', class: 'inline'
+
+  = f.label :songs
+  = f.simple_fields_for :songs
+  = f.link_to_add 'Add a song', :songs
+  %br
+  %br
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class: 'btn'
+
+/ #cover.modal.hide.fade
+/   .modal-header
+/     %button{:type => "button", :class => "close", "data-dismiss" => "modal"}
+/       ×
+/     %h3 Cover from Last.fm
+
+/   .modal-body
+/     %p Possible cover for this album:
+/     =image_tag '/images/loading.gif', id: 'cover_image'
+/   .modal-footer
+/     %a{:class =>"btn", "data-dismiss" => "modal"}
+/       Cancel
+/     %a{:class =>"btn btn-primary", "data-dismiss" => "modal"}
+/       Save cover

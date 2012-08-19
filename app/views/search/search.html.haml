@@ -1,9 +1,19 @@
-%h3 Artists:
--@artists.each do |artist|
-  %p= link_to artist.name, artist
-%h3 Albums:
--@albums.each do |album|
-  %p= link_to album.name, album
-%h3 Songs:
--@songs.each do |song|
-  %p= link_to song.name, song
+%h1 Search results:
+
+%ul.thumbnails
+  %h3.span12 Artists
+  -@artists.each do |artist|
+    = render partial: 'artists/artist', locals: {artist: artist, edit: false}
+
+%ul.thumbnails  
+  %h3.span12 Albums
+  -@albums.each do |album|
+    = render partial: 'albums/album', locals: {album: album, edit: false}
+
+%h3 Songs
+%table.table
+  .span3
+    -@songs.each do |song|
+      %tr
+        %td= song.name
+        %td= to_min_sec song.duration

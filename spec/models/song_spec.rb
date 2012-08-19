@@ -7,7 +7,6 @@ describe Song do
   end
 
   it { should validate_presence_of(:name) }
-  it { should validate_uniqueness_of(:name) }
   it { should validate_presence_of(:duration) }
 
   it "should only allow positive integer durations" do

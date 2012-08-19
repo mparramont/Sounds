@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  respond_to :html, :js
   # GET /albums
   # GET /albums.json
   def index
@@ -25,7 +26,6 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-    @album.songs.build
     
     respond_to do |format|
       format.html # new.html.erb
@@ -33,9 +33,23 @@ class AlbumsController < ApplicationController
     end
   end
 
+  # GET /albums/new
+  # GET /albums/new.json
+  def add
+    @album = Album.new
+    @name = Artist.find(params[:artist]).name
+
+    respond_to do |format|
+      format.html {render 'albums/new'}
+      format.json { render json: @album }
+    end
+  end
+
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    @name = ''
+    @name = @album.artist.name if @album.artist
   end
 
   # POST /albums
@@ -84,6 +98,11 @@ class AlbumsController < ApplicationController
       format.html { redirect_to albums_url }
       format.json { head :no_content }
     end
+  end
+
+  def cover
+    @image = Rockstar::Album.new('Interpol', 'Interpol', include_info: true).images['extralarge']
+    respond_with @image
   end
 
   private

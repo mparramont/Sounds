@@ -1,20 +1,31 @@
-.hero-unit
+.hero-unit.well
   %p
     %h1 Sounds
 
   %p 
-    Sounds is a web application to store your music metadata, including artists, albums and songs. 
+    Sounds is a web application to manage all your music metadata, and then some!
 
   %p 
     Features:
     %br
-    · Integration with last.fm to check for similar artists
+    · Handles artists, albums, covers and songs metadata
+    %br
+    · Integration with Last.fm to check for similar artists
     %br
     · A nifty search box to locate all your music
 
   %p
-    %h3 Try it out!
-  %p
-    %p= link_to 'Create an album', new_album_path, class: 'btn btn-primary btn-large'
+    %b Use the navigation bar above, or check below whats new!
+.row
+  %h2.span6 
+    Recent artists:
+    %ul.thumbnails
+      - @artists.each do |artist|
+        = render partial: 'artists/artist', locals: {artist: artist, edit: false}
+  %h2.span6 
+    Recent albums:
+    %ul.thumbnails
+      - @albums.each do |album|
+        = render partial: 'albums/album', locals: {album: album, edit: false}
 
-Small project for Simfy - hope you like it!
+Small project for Simfy, using Ruby on Rails and Twitter Bootstrap - hope you like it!

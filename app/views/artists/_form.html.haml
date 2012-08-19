@@ -1,16 +1,12 @@
-= form_for @artist do |f|
+= simple_form_for @artist do |f|
   -if @artist.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@artist.errors.count, "error")} prohibited this artist from being saved:"
-      %ul
-        - @artist.errors.full_messages.each do |msg|
-          %li= msg
+    .alert.alert-error Some errors were found, please take a look:
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :bio
-    = f.text_area :bio
+  = f.input :name
+
+  = f.input :bio
+    
+  = f.input :picture
+  
   .actions
     = f.submit 'Save'

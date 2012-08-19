@@ -1,20 +1,29 @@
-%h3= @artist.name
-
-%p
-  %b Bio:
-  = @artist.bio
-
-%p
-  %b Albums:
-  - @artist.albums.each do |album|
+%h1
+  = @artist.name
+%br
+.row
+  .span3.well
+    .image=image_tag @artist.picture.url(:medium)
+  .span5.well.bio
     %p
-    = link_to album.name, album
+    = @artist.bio
+  .span3
+    %p 
+      %b Similar artists (via Last.fm):
+    #similar{'data-load' => similar_to_artist_path(@artist)}
+      Loading...
+
+%b Albums:
+%ul.thumbnails
+  - @artist.albums.each do |album|
+    -album.artist = nil
+    = render partial: 'albums/album', locals: {album: album, edit: false}
+%p
+  = link_to 'Add an album', 
+            { controller: 'albums', action: 'add', artist: @artist.id },
+            class: 'btn btn-primary'
 
 %p
-  %b Similar artists:
-  #similar{'data-load' => similar_to_artist_path(@artist)}
-    Loading...
-
-= link_to 'Edit', edit_artist_path(@artist)
-\|
-= link_to 'Back', artists_path
+  = link_to 'Edit artist', edit_artist_path(@artist), class: 'btn'
+  \|
+  = link_to 'Back', artists_path

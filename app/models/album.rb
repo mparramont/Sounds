@@ -1,7 +1,7 @@
 require 'texticle/searchable'
 class Album < ActiveRecord::Base
   belongs_to :artist
-  attr_accessible :info, :name, :release_date, :cover, :artist, :songs_attributes
+  attr_accessible :info, :name, :release_date, :genre, :cover, :artist, :songs_attributes
   has_many :songs, :dependent => :destroy
   accepts_nested_attributes_for :songs, :allow_destroy => :true
   validates_presence_of :name
@@ -10,9 +10,7 @@ class Album < ActiveRecord::Base
 
   has_attached_file :cover, 
     :styles => {
-      :large => "600x600",
-      :medium => "300x300",
-      :thumb => "100x100" 
+      :medium => "300x300"
     },
     :default_url => '/images/missing_:style.png',
     :storage => :s3,
@@ -26,4 +24,8 @@ class Album < ActiveRecord::Base
   validates_attachment_size :cover, :less_than => 2.megabytes
 
   extend Searchable(:name)
+
+  def duration
+    songs.map{|s| s.duration}.sum
+  end
 end

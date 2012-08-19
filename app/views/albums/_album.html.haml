@@ -1,0 +1,16 @@
+%li.span3
+  .thumbnail
+    %p.image
+      = link_to album do
+        = image_tag album.cover.url(:medium)
+    .name
+      %b= link_to album.name, album
+      \-
+      = link_to album.artist.name, album.artist if album.artist
+    %h6
+      = pluralize album.songs.count , 'song'
+
+    -if edit
+      = link_to 'Edit', edit_album_path(album)
+      \|
+      = link_to 'Delete', album, :confirm => 'Are you sure?', :method => :delete

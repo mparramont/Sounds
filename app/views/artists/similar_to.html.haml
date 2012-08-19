@@ -1,5 +1,13 @@
--@first_10_similar.each do |artist|
-  =link_to artist.name.html_safe, artist.url
-#more
-  -@more_similar.each do |artist|
-    =link_to artist.name.html_safe, artist.url
+-if @first_10_similar.count > 0
+  -@first_10_similar.each do |artist|
+    .inline
+      =link_to artist.name.html_safe, artist.url
+-else
+  No similar artists found.
+
+-if @more_similar.count > 0
+  #more-link
+    %a{'href' => '#'} more…
+  #more.hide
+    -@more_similar.each do |artist|
+      =link_to artist.name.html_safe, artist.url

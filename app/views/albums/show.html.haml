@@ -1,25 +1,32 @@
-%h3= @album.name
+%h1
+  = @album.name
+  %small
+    \-
+    = link_to @album.artist.name, @album.artist if @album.artist
+%p
+  = @album.release_date 
+  - if @album.genre.length > 0
+    \|
+    = @album.genre
+.row
+  .span4
+    %ul.thumbnails
+      %li.thumbnail
+        = image_tag @album.cover.url(:medium)
 
-%p
-  %b Artist:
-  =link_to @album.artist.name, @album.artist if @album.artist
+  .span5
+    %table.table
+      - @album.songs.each do |song|
+        %tr
+          %td= song.name
+          %td= to_min_sec song.duration
+    %h6
+      = pluralize @album.songs.count , 'song'
+      \| 
+      = to_min_sec @album.duration
+.info
+  %p= @album.info
 
-%p
-  %b Release date:
-  = @album.release_date
-%p
-  %b Info:
-  = @album.info
-%p
-  %b Cover:
-  = image_tag @album.cover.url(:medium)
-%p
-  %b Songs:
-  - @album.songs.each do |song|
-    %p
-      = song.name
-      = to_min_sec song.duration
-
-= link_to 'Edit', edit_album_path(@album)
+= link_to 'Edit', edit_album_path(@album), class: 'btn'
 \|
 = link_to 'Back', albums_path

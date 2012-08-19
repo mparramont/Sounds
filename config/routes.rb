@@ -1,7 +1,12 @@
 Sounds::Application.routes.draw do
   resources :songs
 
-  resources :albums
+  resources :albums do
+    collection do
+      get 'add'
+      get 'cover'
+    end
+  end
   
   resources :artists do
     get 'similar_to', on: :member

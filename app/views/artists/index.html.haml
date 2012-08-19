@@ -1,19 +1,11 @@
-%h1 Listing artists
+%h1 Artists
 
-%table
-  %tr
-    %th Name
-    %th Bio
-    %th
-    %th
-
+%ul.thumbnails
   - @artists.each do |artist|
-    %tr
-      %td= link_to artist.name, artist
-      %td= artist.bio
-      %td= link_to 'Edit', edit_artist_path(artist)
-      %td= link_to 'Destroy', artist, :confirm => 'Are you sure?', :method => :delete
+    = render partial: 'artists/artist', locals: {artist: artist, edit: true}
 
 %br
 
-= link_to 'New Artist', new_artist_path
+= link_to 'Create an artist', new_artist_path, class: 'btn btn-primary btn-large'
+\|
+= link_to 'Back', '/'
