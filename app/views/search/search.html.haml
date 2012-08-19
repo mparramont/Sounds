@@ -2,18 +2,26 @@
 
 %ul.thumbnails
   %h3.span12 Artists
-  -@artists.each do |artist|
-    = render partial: 'artists/artist', locals: {artist: artist, edit: false}
+  -if @artists.count >0
+    -@artists.each do |artist|
+      = render partial: 'artists/artist', locals: {artist: artist, edit: false}
+  -else
+    %p.span12 No matching artists found.
 
 %ul.thumbnails  
   %h3.span12 Albums
-  -@albums.each do |album|
-    = render partial: 'albums/album', locals: {album: album, edit: false}
+  -if @albums.count >0
+    -@albums.each do |album|
+      = render partial: 'albums/album', locals: {album: album, edit: false}
+  -else
+    %p.span12 No matching albums found.
 
 %h3 Songs
-%table.table
-  .span3
+-if @songs.count > 0
+  %table.table
     -@songs.each do |song|
       %tr
         %td= song.name
         %td= to_min_sec song.duration
+-else
+  %p No matching songs found.
