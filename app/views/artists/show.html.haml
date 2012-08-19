@@ -17,7 +17,7 @@
 %ul.thumbnails
   - @artist.albums.each do |album|
     -album.artist = nil
-    = render partial: 'albums/album', locals: {album: album, edit: false}
+    = render partial: 'albums/album', locals: {album: album, edit: true}
 %p
   = link_to 'Add an album', 
             { controller: 'albums', action: 'add', artist: @artist.id },
