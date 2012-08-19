@@ -5,8 +5,9 @@
         = image_tag album.cover.url(:medium)
     .name
       %b= link_to album.name, album
-      \-
-      = link_to album.artist.name, album.artist if album.artist
+      -if album.artist
+        \-
+        = link_to album.artist.name, album.artist
     %h6
       = pluralize album.songs.count , 'song'
 
