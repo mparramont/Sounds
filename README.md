@@ -1,5 +1,4 @@
-Sounds
-========================
+# Sounds
 
 This is a small web application to manage music metadata, built as a test for a job application for Simfy.
 
