@@ -1,19 +1,12 @@
 Sounds
 ========================
 
-This application was generated with the rails_apps_composer gem:
-https://github.com/RailsApps/rails_apps_composer
-provided by the RailsApps Project:
-http://railsapps.github.com/
+This is a small web application to manage music metadata, built as a test for a job application for Simfy.
 
-________________________
+You can check all the code here, and go to  
+http://sounds-cd.herokuapp.com/
+to see it in action!
 
-Recipes:
-["auth", "controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "railsapps", "readme", "routes", "setup", "testing", "views"]
+For any questions or comments, please contact me at mparramont@gmail.com
 
-Preferences:
-{:railsapps=>"none", :database=>"postgresql", :templates=>"haml", :unit_test=>"rspec", :integration=>"capybara", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"none", :authorization=>"none", :starter_app=>"home_app"}
-
-________________________
-
-License
+Hope you like it!
