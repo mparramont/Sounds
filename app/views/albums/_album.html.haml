@@ -4,10 +4,10 @@
       = link_to album do
         = image_tag album.cover.url(:medium)
     .name
-      %b= link_to album.name, album
+      %b= link_to truncate(album.name,length: 16), album
+    .artist
       -if album.artist
-        \-
-        = link_to album.artist.name, album.artist
+        = link_to truncate(album.artist.name,length: 16), album.artist
     %h6
       = album.release_date.year
       \|
