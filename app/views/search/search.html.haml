@@ -19,9 +19,15 @@
 %h3 Songs:
 -if @songs.count > 0
   %table.table
+    %thead
+      %th Name
+      %th Duration
+      %th Album
+    %tbody
     -@songs.each do |song|
       %tr
         %td= song.name
         %td= to_min_sec song.duration
+        %td= link_to song.album.name, song.album
 -else
   %p No matching songs found.
