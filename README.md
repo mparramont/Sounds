@@ -1,6 +1,13 @@
 # Sounds
 
-This is a small web application to manage music metadata, built as a test for a job application for Simfy.
+Small web application to manage music metadata.
+
+To build it, clone the repo and at the root execute:
+
+```bash
+bundle install
+rake db:setup
+```
 
 You can see it in action in
 http://sounds-cd.herokuapp.com/
