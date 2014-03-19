@@ -4,7 +4,6 @@ Sounds::Application.routes.draw do
   resources :albums do
     collection do
       get 'add'
-      get 'cover'
     end
   end
   

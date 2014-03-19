@@ -100,11 +100,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  def cover
-    @image = Rockstar::Album.new('Interpol', 'Interpol', include_info: true).images['extralarge']
-    respond_with @image
-  end
-
   private
   def clean errors #workaround to ignore "'identify' command" errors
     errors.each do |key, error|

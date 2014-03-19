@@ -19,7 +19,6 @@
 
   = f.input :cover,
             wrapper_html: { class: 'inline' }
-  / = link_to 'Find cover on Last.fm', cover_albums_path(@album), remote: true, id: 'cover_link', class: 'inline'
 
   = f.label :songs
   = f.simple_fields_for :songs
@@ -27,19 +26,4 @@
   %br
   %br
   .actions
-    = f.submit 'Save', class: 'btn btn-primary'
-
-/ #cover.modal.hide.fade
-/   .modal-header
-/     %button{:type => "button", :class => "close", "data-dismiss" => "modal"}
-/       ×
-/     %h3 Cover from Last.fm
-
-/   .modal-body
-/     %p Possible cover for this album:
-/     =image_tag '/images/loading.gif', id: 'cover_image'
-/   .modal-footer
-/     %a{:class =>"btn", "data-dismiss" => "modal"}
-/       Cancel
-/     %a{:class =>"btn btn-primary", "data-dismiss" => "modal"}
-/       Save cover
+    = f.submit 'Save', class: 'btn'
