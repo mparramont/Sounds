@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "2.0.0"
+ruby "2.1.0"
 gem 'rails', '~> 4.0'
 gem 'sass-rails', "~> 4.0.2"
 gem 'coffee-rails'
@@ -30,3 +30,4 @@ gem 'textacular' #for search
 gem 'utf8_enforcer_workaround' #to remove "utf8=✓" from 'get' queries
 gem 'protected_attributes' # for a clean transition to Rails 4.0
 gem 'rails_12factor', group: :production # needed for heroku
+gem 'database_cleaner', :group => :test # clean db between runs
