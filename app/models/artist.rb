@@ -1,4 +1,3 @@
-require 'texticle/searchable'
 class Artist < ActiveRecord::Base
   attr_accessible :bio, :name, :picture
   validates_presence_of :name
@@ -19,8 +18,6 @@ class Artist < ActiveRecord::Base
 
   validates_attachment_content_type :picture, :content_type => /image/
   validates_attachment_size :picture, :less_than => 2.megabytes
-
-  extend Searchable(:name)
 
   def self.find_or_new name
     Artist.find_by_name(name) or Artist.new(:name => name) 

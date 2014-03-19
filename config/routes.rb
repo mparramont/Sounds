@@ -12,7 +12,7 @@ Sounds::Application.routes.draw do
     get 'similar_to', on: :member
   end
 
-  match 'search/' => 'search#search'
+  get 'search/' => 'search#search'
 
   root to: "home#index"
 end

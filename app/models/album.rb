@@ -1,4 +1,3 @@
-require 'texticle/searchable'
 class Album < ActiveRecord::Base
   belongs_to :artist
   attr_accessible :info, :name, :release_date, :genre, :cover, :artist, :songs_attributes
@@ -22,8 +21,6 @@ class Album < ActiveRecord::Base
 
   validates_attachment_content_type :cover, :content_type => /image/
   validates_attachment_size :cover, :less_than => 2.megabytes
-
-  extend Searchable(:name)
 
   def duration
     songs.map{|s| s.duration}.sum
