@@ -2,14 +2,12 @@ source 'https://rubygems.org'
 ruby "2.1.0"
 gem 'rails', '~> 4.0'
 gem 'sass-rails', "~> 4.0.2"
-gem 'coffee-rails'
 gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem "thin", ">= 1.4.1"
 gem "pg", ">= 0.14.0"
 gem "haml", ">= 3.1.7"
 gem "bootstrap-sass", ">= 2.0.4.0"
-gem "therubyracer", :platform => :ruby
 
 group :development do
   gem "haml-rails"
