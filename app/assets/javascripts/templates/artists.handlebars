@@ -1,0 +1,40 @@
+<h1>Artists</h1>
+
+<ul class='thumbnails'>
+  {{#each artist in controller}}
+<!--   %li.span3
+  .thumbnail
+    %p.image
+      = link_to artist do
+        = image_tag artist.picture.url(:medium)
+    .name
+      %b= link_to truncate(artist.name, length: 20), artist
+    %h6
+      = pluralize artist.songs, 'song'
+      , 
+      = pluralize artist.albums.count, 'album'
+
+    -if edit
+      = link_to 'Edit', edit_artist_path(artist)
+      \|
+      = link_to 'Delete', artist, :confirm => 'Are you sure?', :method => :delete -->
+    <li class='span3'>
+      <div class='thumbnail'>
+        <p class='image'>
+          {{#link-to "artist" artist}}
+            <img {{bind-attr src=artist.picture_url}}>
+          {{/link-to}}
+        </p>
+        <div class='name'>
+          <b>{{#link-to "artist" artist}}{{artist.name}}{{/link-to}}</b>
+        </div>
+        <h6>
+          {{artist.songs}} songs, {{artist.albumCount}} albums
+        </h6>
+    </li>
+  {{else}}
+    <li>There are no artists.</li>
+  {{/each}}
+</ul>
+
+{{outlet}}

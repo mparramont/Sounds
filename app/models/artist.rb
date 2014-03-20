@@ -26,4 +26,8 @@ class Artist < ActiveRecord::Base
   def songs
     albums.map{|a| a.songs.count}.sum
   end
+
+  def picture_url
+    picture.url(:medium)
+  end
 end

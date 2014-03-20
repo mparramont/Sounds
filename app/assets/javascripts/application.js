@@ -14,6 +14,16 @@
 //= require jquery_ujs
 //= require jquery_nested_form
 //= require bootstrap
+//= require jquery
+//= require handlebars
+//= require ember
+//= require ember-data
+//= require_self
+//= require sounds
+
+// for more details see: http://emberjs.com/guides/application/
+Sounds = Ember.Application.create();
+
 //= require_tree .
 $(function(){
   var active = window.location.pathname.split('/')[1] || 'home';

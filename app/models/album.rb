@@ -25,4 +25,8 @@ class Album < ActiveRecord::Base
   def duration
     songs.map{|s| s.duration}.sum
   end
+
+  def type # needed for Ember hasmany relationship
+    'album'
+  end
 end

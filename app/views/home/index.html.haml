@@ -1,31 +1,33 @@
-.hero-unit.well
-  %p
-    %h1 Sounds
+%script{:type => 'text/handlebars'}
+   {{ outlet }}
+/ .hero-unit.well
+/   %p
+/     %h1 Sounds
 
-  %p 
-    Sounds is a web application to manage all your music metadata, and then some!
+/   %p 
+/     Sounds is a web application to manage all your music metadata, and then some!
 
-  %p 
-    Features:
-    %br
-    · Handles artists, albums, covers and songs metadata
-    %br
-    · Integration with Last.fm to check for similar artists
-    %br
-    · A nifty search box to locate all your music
+/   %p 
+/     Features:
+/     %br
+/     · Handles artists, albums, covers and songs metadata
+/     %br
+/     · Integration with Last.fm to check for similar artists
+/     %br
+/     · A nifty search box to locate all your music
 
-  %p
-    %b Use the navigation bar above, or check below whats new!
-.row
-  .span6 
-    %h2=link_to 'Recent artists', artists_path
-    %ul.thumbnails
-      - @artists.each do |artist|
-        = render partial: 'artists/artist', locals: {artist: artist, edit: false}
-  .span6 
-    %h2=link_to 'Recent albums', albums_path
-    %ul.thumbnails
-      - @albums.each do |album|
-        = render partial: 'albums/album', locals: {album: album, edit: false} 
+/   %p
+/     %b Use the navigation bar above, or check below whats new!
+/ .row
+/   .span6 
+/     %h2=link_to 'Recent artists', artists_path
+/     %ul.thumbnails
+/       - @artists.each do |artist|
+/         = render partial: 'artists/artist', locals: {artist: artist, edit: false}
+/   .span6 
+/     %h2=link_to 'Recent albums', albums_path
+/     %ul.thumbnails
+/       - @albums.each do |album|
+/         = render partial: 'albums/album', locals: {album: album, edit: false} 
 
-Built by <a href='https://github.com/mparramont'>mparramon</a>, using Ruby on Rails and Twitter Bootstrap - hope you like it!
+/ Built by <a href='https://github.com/mparramont'>mparramon</a>, using Ruby on Rails and Twitter Bootstrap - hope you like it!

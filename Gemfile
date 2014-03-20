@@ -8,6 +8,8 @@ gem "thin", ">= 1.4.1"
 gem "pg", ">= 0.14.0"
 gem "haml", ">= 3.1.7"
 gem "bootstrap-sass", ">= 2.0.4.0"
+gem "ember-rails"
+gem 'ember-source', '1.4.0'
 
 group :development do
   gem "haml-rails"
