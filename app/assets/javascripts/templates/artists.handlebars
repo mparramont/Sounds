@@ -26,10 +26,10 @@
           {{/link-to}}
         </p>
         <div class='name'>
-          <b>{{#link-to "artist" artist}}{{artist.name}}{{/link-to}}</b>
+          <b>{{#link-to "artist" artist}}{{truncate artist.name 20}}{{/link-to}}</b>
         </div>
         <h6>
-          {{artist.songs}} songs, {{artist.albumCount}} albums
+          {{pluralize artist.songs 'song'}}, {{pluralize artist.albums.length 'album'}}
         </h6>
     </li>
   {{else}}
