@@ -20,13 +20,13 @@
 //= require ember-data
 //= require_self
 //= require sounds
+//= require_tree .
 
 // for more details see: http://emberjs.com/guides/application/
 Sounds = Ember.Application.create();
 
-//= require_tree .
 $(function(){
   var active = window.location.pathname.split('/')[1] || 'home';
   $('.nav li').removeClass('active');
   $('.nav #'+active).addClass('active');
-})
+});
