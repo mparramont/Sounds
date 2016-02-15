@@ -31,7 +31,7 @@ gem 'simple_form' # for simple forms and integration with twitter bootstrap
 gem 'nested_form' # for nested songs inside album
 gem "validates_timeliness" # validates dates
 gem 'paperclip' # for upload file functionality
-gem 'rmagick' # for image content type validation, ImageMagick interface
+gem "mini_magick" # for image content type validation, ImageMagick interface
 gem 'aws-sdk' # for s3 storage (heroku's file system is read only)
 gem 'rockstar' # for last.fm
 gem 'textacular' # for search
