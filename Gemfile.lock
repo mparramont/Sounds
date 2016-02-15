@@ -26,6 +26,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.2)
+    appsignal (1.0.3)
+      rack
+      thread_safe
     arel (4.0.2)
     aws-sdk (1.6.3)
       httparty (~> 0.7)
@@ -204,6 +207,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appsignal
   aws-sdk
   bootstrap-sass (>= 2.0.4.0)
   capybara (>= 1.1.2)
@@ -234,4 +238,4 @@ DEPENDENCIES
   validates_timeliness
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

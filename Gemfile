@@ -38,3 +38,4 @@ gem 'textacular' # for search
 gem 'utf8_enforcer_workaround' # to remove "utf8=✓" from 'get' queries
 gem 'protected_attributes' # for a clean transition to Rails 4.0
 gem 'rails_12factor', group: :production # needed for heroku
+gem "appsignal" # monitorization
